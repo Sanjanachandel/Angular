@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    <center>
+    <form>
+        <div>
+            <label for="name">Name*</label>
+            <input id="name" type="text" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="address">Address</label>
+            <input id="address" type="text">
+        </div>
+        <br>
+
+        <div>
+            <label for="zipcode">Zip Code*</label>
+            <input id="zipcode" type="text" placeholder="enter a 5-digit code" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="country">Country*</label>
+            <select id="country" required>
+                <option value="">Please select...</option>
+                <option value="USA">USA</option>
+                <option value="India">India</option>
+            </select>
+        </div>
+        <br>
+
+        <div>
+            <label>Gender*</label>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+        </div>
+        <br>
+
+        <div>
+            <label>Preferences*</label>
+            <label><input type="checkbox" name="pref" value="red"> Red</label>
+            <label><input type="checkbox" name="pref" value="green" checked> Green</label>
+            <label><input type="checkbox" name="pref" value="blue"> Blue</label>
+        </div>
+        <br>
+
+        <div>
+            <label for="phone">Phone*</label>
+            <input id="phone" type="tel" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="email">Email*</label>
+            <input id="email" type="email" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="password">Password*</label>
+            <input id="password" type="password" placeholder="6-8 characters" required minlength="6" maxlength="8">
+        </div>
+        <br>
+
+        <div>
+            <label for="confirm-password">Verify Password*</label>
+            <input id="confirm-password" type="password" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="birthday">Birthday*</label>
+            <input id="birthday" type="date" required>
+        </div>
+        <br>
+
+        <div>
+            <label for="appointment">Appointment*</label>
+            <input id="appointment" type="time" required>
+        </div>
+        <br>
+
+        <div>
+            <input type="submit" value="SEND">
+            <input type="reset" value="CLEAR">
+        </div>
+    </form>
+    </center>
+</body>
+</html>
