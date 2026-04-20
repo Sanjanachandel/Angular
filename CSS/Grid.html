@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main{
+            display: grid;
+            height: 30vh;
+            width: 80vw;
+            grid-template-columns: repeat(3,200px) ;
+            grid-template-rows: auto auto auto auto;
+        }
+        #nav
+        {
+            background-color: aqua;
+            grid-column: 1/4;
+            text-align: center;
+            
+        }
+        #aside
+        {
+            background-color: bisque;
+            grid-row: 2/4;
+        }
+        #div2
+        {
+            background-color: blueviolet;
+             grid-row: 2/4;
+
+        }
+        #div3
+        {
+            background-color: blue;
+             grid-row: 2/4;
+        }
+        #footer
+        {
+            background-color: rgb(250, 159, 22);
+            grid-column: 1/4;
+        }
+        #nav1
+        {
+            background-color: bisque;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-around;
+        }
+        @media (max-width:400px)
+        {
+            #nav1{
+                flex-direction: column;
+                background-color: blueviolet;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <main>
+        <nav id="nav">Navbar</nav>
+        <aside id="aside">Aside</aside>
+        <div id="div2">Section1</div>
+        <div id="div3">Section2</div>
+        <footer id="footer">Footer</footer>
+    </main> -->
+    <nav id="nav1">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+    </nav>
+</body>
+</html>

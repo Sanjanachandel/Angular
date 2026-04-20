@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(2, 2, 38);
+            margin-top: 20px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .navbar {
+            width: 90vw;
+            margin: 20px auto;
+            text-align: center; 
+        }
+
+        .upper {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .lower {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            gap: 10px;
+        }
+
+        .lower h1 {
+            font-size: 2.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            width: 40%;
+            gap: 10px;
+            max-width: 500px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            background-color: rgb(30, 30, 59);
+            border: none;
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: rgb(30, 30, 59);
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .card {
+            background-color: rgb(30, 30, 59);
+            border-radius: 12px;
+            padding: 15px;
+            color: white;
+        }
+
+        main {
+            width: 90vw;
+            margin: 10px auto;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 3fr 1fr 2fr; 
+            gap: 20px;
+        }
+
+        .box1 {
+            grid-area: 1/1/2/2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #4a6cf7, #6a5acd);
+        }
+
+        .box2 {
+            grid-area: 2/1/3/2;
+        }
+
+        .section1 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .section1 .card {
+            flex: 1;
+            text-align: center;
+        }
+
+        .box3 {
+            grid-area: 3/1/4/2;
+        }
+
+        .section2 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: white;
+        }
+
+        .section2 .boxes {
+            display: flex;
+        }
+
+        .section2 .card {
+            text-align: center;
+            margin: 5px;
+        }
+
+        .box4 {
+            grid-area: 1/2/4/3;
+            border-radius: 20px;
+            padding: 10px;
+            background-color: rgb(22, 22, 49);
+        }
+
+        .section3 .heading {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            color: white;
+        }
+
+        .section3 .boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .section3 .card {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media (max-width: 576px) {
+
+    .upper {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .lower h1 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .form-group {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .section1 {
+        flex-direction: column;
+    }
+
+    .section1 .card {
+        width: 100%;
+    }
+
+    .section2 .boxes {
+        flex-direction: column;
+    }
+
+    .section2 .card {
+        width: 100%;
+    }
+
+    .section3 .card {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+}@media (max-width: 576px) {
+
+    .box1 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px;
+        height: auto;
+    }
+
+    .box1 h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .box1 {
+        grid-area: 1/1/2/2;
+    }
+
+    .box2 {
+        grid-area: 2/1/3/2;
+    }
+
+    .box3 {
+        grid-area: 3/1/4/2;
+    }
+
+    .box4 {
+        grid-area: 4/1/5/2;
+    }
+
+    .upper {
+        font-size: 1.8rem;
+    }
+
+    .lower h1 {
+        font-size: 2.2rem;
+    }
+
+    .form-group {
+        width: 60%;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="upper">
+            <div>Weather Now</div>
+            <div>Units</div>
+        </div>
+
+        <div class="lower">
+            <h1>How's the sky looking today?</h1>
+            <div class="form-group">
+                <input type="text" placeholder="Search for a place...">
+                <button>Search</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+
+        <section class="box1">
+            <div>
+                <h2>Berlin, Germany</h2>
+                <p>Tuesday, Aug 5, 2025</p>
+            </div>
+            <div>
+                <h1>20° ☀️</h1>
+            </div>
+        </section>
+
+        <section class="box2">
+            <div class="section1">
+                <section class="card">Feels Like <h3>18°</h3></section>
+                <section class="card">Humidity <h3>46%</h3></section>
+                <section class="card">Wind <h3>14 km/h</h3></section>
+                <section class="card">Precipitation <h3>0 mm</h3></section>
+            </div>
+        </section>
+
+        <section class="box3">
+            <div class="section2">
+                <h4>Daily forecast</h4>
+                <div class="boxes">
+                    <section class="card">Tue 🌧️ 20°/14°</section>
+                    <section class="card">Wed 🌧️ 20°/14°</section>
+                    <section class="card">Thu 🌧️ 20°/14°</section>
+                    <section class="card">Fri 🌧️ 20°/14°</section>
+                    <section class="card">Sat 🌧️ 20°/14°</section>
+                    <section class="card">Sun 🌧️ 20°/14°</section>
+                    <section class="card">Mon 🌧️ 20°/14°</section>
+                </div>
+            </div>
+        </section>
+
+        <section class="box4">
+            <div class="section3">
+                <div class="heading">
+                    <h3>Hourly forecast</h3>
+                    <div>Tuesday</div>
+                </div>
+
+                <div class="boxes">
+                    <section class="card"><span>3 PM</span><span>☁️</span><span>20°</span></section>
+                    <section class="card"><span>4 PM</span><span>☁️</span><span>20°</span></section>
+                    <section class="card"><span>5 PM</span><span>☁️</span><span>20°</span></section>
+                    <section class="card"><span>6 PM</span><span>☁️</span><span>20°</span></section>
+                    <section class="card"><span>7 PM</span><span>☁️</span><span>20°</span></section>
+                    <section class="card"><span>8 PM</span><span>☁️</span><span>20°</span></section>
+                    <section class="card"><span>9 PM</span><span>☁️</span><span>20°</span></section>
+                    <section class="card"><span>10 PM</span><span>☁️</span><span>20°</span></section>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

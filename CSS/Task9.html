@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi Step Form</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: #eef2f7;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      display: flex;
+      width: 900px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 30%;
+      background: linear-gradient(180deg, #5a4bff, #6c63ff);
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .step span {
+      width: 30px;
+      height: 30px;
+      border: 1px solid white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    .step.active span {
+      background: white;
+      color: #5a4bff;
+    }
+
+    .step p {
+      font-size: 12px;
+    }
+
+    .step h4 {
+      font-size: 14px;
+    }
+
+    
+    .form-section {
+      width: 70%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-section h2 {
+      margin-bottom: 10px;
+    }
+
+    .form-section p {
+      margin-bottom: 20px;
+      color: gray;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #0b2c5f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      align-self: flex-end;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+
+ 
+  <div class="sidebar">
+        <div class="step active">
+      <span>1</span>
+      <div>
+        <p>STEP 1 </p>
+        <h4>YOUR INFO</h4>
+      </div>
+    </div>
+
+    <div class="step">
+      <span>2</span>
+      <div>
+        <p>STEP 2</p>
+        <h4>SELECT PLAN</h4>
+      </div>
+    </div>
+
+    <div class="step">
+      <span>3</span>
+      <div>
+        <p>STEP 3</p>
+        <h4>ADD-ONS</h4>
+      </div>
+    </div>
+
+    <div class="step">
+      <span>4</span>
+      <div>
+        <p>STEP 4</p>
+        <h4>SUMMARY</h4>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="form-section">
+    <h2>Personal info</h2>
+    <p>Please provide your name, email address, and phone number.</p>
+
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="e.g. Sana King">
+
+      <label>Email Address</label>
+      <input type="email" placeholder="e.g. sanaking@gmail.com">
+
+      <label>Phone Number</label>
+      <input type="text" placeholder="e.g. +1 234 567 890">
+
+      <button type="submit">Next Step Now </button>
+    </form>
+  </div>
+
+</div>
+
+</body>
+</html>

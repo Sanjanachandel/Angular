@@ -1,0 +1,9 @@
+h1{
+  color:red;
+  background-color: aqua;
+}
+app-about{
+  display: block;
+  color:green;
+  background-color: pink;
+}

@@ -1,0 +1,162 @@
+/* /* h1{
+    color: red;
+}
+*{
+    background-color: blueviolet;
+} */
+
+/* #b + .box + .box + #bb{
+    color: bisque;
+}
+a:link{
+    background-color: blue;
+}
+a:active{
+    background-color: brown;
+}
+a:visited{
+    background-color: aquamarine;
+} */
+/* input:focus{
+    color: rgb(37, 201, 201);
+    background-color: blue;
+} */
+/* button:hover{
+    width: 50px;
+    height: 50px;
+    background-color: green;
+}
+
+li::after{
+    content:"**" ;
+}
+p::selection{
+    
+    background-color: aqua;
+}
+[placeholder="enter naem"]
+{
+    border: 10px solid red;
+}  */
+
+
+
+/* 
+.box > li {
+    color: orange;
+}
+
+.box li ul li {
+    color: black;
+}
+
+.box ~ #id
+{
+    color: orange;
+}
+/* #id > li {
+    color: orange;
+} */
+/* .box > #p {
+    color: rgb(89, 170, 221);
+}
+
+.i > li{
+    color: green;
+ }
+.bb >li 
+{
+    color: red;
+} */ 
+  *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box ;
+  }
+  /*
+ #container
+ {
+    width: 100vh;
+    height: 100vh;
+    background: red;
+ }
+ #box{
+    width: 80%;
+    height: 80%;
+    background: blue;
+ }
+ #b{
+    width: 2em;
+    height: 2em;
+    background: green;
+ } */ 
+
+ /* body{
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/060/843/811/small/close-up-of-raindrops-on-leaves-hd-background-luxury-hd-wallpaper-image-trendy-background-illustration-free-photo.jpg");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    
+    background-position: center;
+    background-attachment: scroll;
+
+ } */
+ /* #container{
+    border: 10px solid red;
+    width: 400px;
+    height: 400px;
+    border-left: 20px dashed green;
+    padding: 30px;
+    margin: 40px;
+
+ }
+ #box
+ {
+    width: 400px;
+    height: 400px;
+    margin-top: 200px;
+    border: 10px solid green;
+ } */
+
+ /* #id{
+    display: inline;
+    background-color: red;
+    height: 200px;
+    width: 200px;
+ }
+ #box
+ {
+    display: inline-block;
+ } */
+
+ #div1{
+    background: red;
+    width: 80px;
+    height: 50px;
+    position:relative;
+ }
+  #div2{
+    background:green;
+    width: 100px;
+    height: 50px;
+    position:relative;
+    top: 20px;
+ }
+  #div3{
+    background:blue;
+    width: 120px;
+    height: 50px;
+    position:relative;
+ }
+  #div4{
+    background:yellowgreen;
+    width: 150px;
+    height: 50px;
+    position:fixed;
+ }
+
+
+
+

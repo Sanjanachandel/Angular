@@ -1,0 +1,402 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: black !important;
+    color: white !important;
+}
+
+.overlay button:hover {
+    background: white !important;
+    color: #1f7a4d !important;
+}
+
+
+
+#findStore{
+    color:#fff;
+    text-decoration:underline;
+}
+
+.top-strip{
+    background:#1f7a4d;
+    color:white;
+    text-align:center;
+    padding:8px;
+    font-size:14px;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo-img{
+    height:45px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    font-size: 1.4rem;
+}
+
+nav ul li{
+    margin:0 18px;
+}
+
+nav ul li a{
+    color:black;
+    text-decoration:none;
+    font-weight:600;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #1f7a4d;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.nav-right{
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.user-icon{
+    border:2px solid black;
+    border-radius:50%;
+    padding:5px;
+}
+
+#menuBtn {
+    display: none;
+}
+
+.hero{
+    height:90vh;
+    background:url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092") center/cover;
+    display:flex;
+    align-items:center;
+    padding-left:60px;
+    color:white;
+}
+
+.hero-text h1{
+    font-size:42px;
+}
+
+.hero-text button{
+    margin-top:15px;
+    padding:12px 25px;
+    border-radius:25px;
+    border:none;
+    background:white;
+    cursor:pointer;
+}
+
+.advertisements{
+    display:flex;
+    min-height:350px;
+    background:linear-gradient(90deg,#148041,#129548);
+}
+
+.advertisements .content,
+.advertisements .image{
+    flex:1;
+}
+
+.advertisements .content{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:60px;
+    color:white;
+    max-width: 500px;
+}
+
+
+.advertisements img{
+    max-width:300px;
+}
+
+.advertisements .content button{
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    background: white;
+    color: #148041;
+    cursor: pointer;
+    margin-top: 15px;
+
+    width: fit-content;     
+    min-width: 200px;       
+}
+
+.advertisements .image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.advertisements .image img{
+    width:100%;
+    max-width:1000px;
+    object-fit:contain;
+}
+
+.products{
+    padding:80px 60px;
+    background:black;
+    color:white;
+}
+
+.card-container{
+    display:flex;
+    justify-content:space-evenly;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card{
+    width:350px;
+    transition:0.3s;
+    overflow: hidden;
+}
+
+.card img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    margin-bottom: 10px ;
+}
+
+
+.card:hover{
+    transform:scale(1.05);
+    transition: transform 0.4s ease;
+}
+
+.split-banner{
+    display:flex;
+    height:80vh;
+}
+
+.left-banner{
+    flex:2;
+    position:relative;
+}
+
+.left-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    top:50%;
+    left:50px;
+    transform:translateY(-50%);
+}
+
+.overlay button{
+    margin-top:10px;
+    padding:12px 25px;
+    border-radius:30px;
+    background:#1f7a4d;
+    color:white;
+    border:none;
+}
+
+.right-banner{
+    flex:1;
+}
+
+.right-banner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.promo{
+    background:#f4f4f4;
+    padding:60px;
+    text-align:center;
+}
+
+.promo button{
+    margin-top:10px;
+    padding:10px 20px;
+    background:#1f7a4d;
+    color:white;
+    border:none;
+}
+
+.footer{
+    background:black;
+    color:white;
+    padding:50px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-around;
+}
+
+.footer p{
+    margin:5px 0;
+}
+
+.cookie-bar{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:15px;
+}
+
+.cookie-bar button{
+    background:white;
+    color:#148041;
+    padding:8px 20px;
+    border-radius:20px;
+    border:none;
+}
+
+
+
+@media (max-width: 976px) {
+
+    nav ul {
+        font-size: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .advertisements {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advertisements .content {
+        align-items: center;
+        padding: 40px;
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .split-banner {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-banner,
+    .right-banner {
+        height: 300px;
+    }
+}
+
+
+
+@media (max-width: 576px) {
+
+    header {
+        padding: 10px 20px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background: white;
+        width: 200px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    #menuBtn {
+        display: block;
+        font-size: 22px;
+        background: none;
+        border: none;
+    }
+
+    .hero {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 24px;
+    }
+
+    .advertisements .content {
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .cookie-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

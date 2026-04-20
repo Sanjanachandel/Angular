@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo CRUD App</title>
+
+<style>
+body{
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+
+.container{
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  padding:25px;
+  border-radius:15px;
+  width:340px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.2);
+  color:white;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+input{
+  width:65%;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+button{
+  padding:10px 12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  margin-left:5px;
+  transition:0.3s;
+}
+
+#addBtn{
+  background:#00c9a7;
+  color:white;
+}
+
+#addBtn:hover{
+  background:#00a78e;
+}
+
+ul{
+  list-style:none;
+  padding:0;
+  margin-top:15px;
+}
+
+li{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  background:rgba(255,255,255,0.2);
+  margin-top:8px;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+li:hover{
+  transform:scale(1.02);
+}
+
+.actions button{
+  margin-left:5px;
+}
+
+.delete{
+  background:#ff4d4d;
+  color:white;
+}
+
+.delete:hover{
+  background:#cc0000;
+}
+
+.edit{
+  background:#00bcd4;
+  color:white;
+}
+
+.edit:hover{
+  background:#008c9e;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Todo List</h2>
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button id="addBtn">Add</button>
+  <ul id="list"></ul>
+</div>
+
+<script>
+const input = document.getElementById("taskInput");
+const btn = document.getElementById("addBtn");
+const list = document.getElementById("list");
+
+btn.addEventListener("click", addTask);
+
+input.addEventListener("keypress", function(e){
+  if(e.key === "Enter") addTask();
+});
+
+function addTask(){
+  if(input.value.trim() === "") return;
+
+  const li = document.createElement("li");
+
+  const span = document.createElement("span");
+  span.textContent = input.value;
+
+  const actions = document.createElement("div");
+  actions.className = "actions";
+
+  const edit = document.createElement("button");
+  edit.textContent = "Edit";
+  edit.className = "edit";
+
+  const del = document.createElement("button");
+  del.textContent = "X";
+  del.className = "delete";
+
+  edit.addEventListener("click", () => {
+    const newTask = prompt("Edit task:", span.textContent);
+    if(newTask !== null && newTask.trim() !== ""){
+      span.textContent = newTask;
+    }
+  });
+
+  del.addEventListener("click", () => {
+    li.remove();
+  });
+
+  actions.appendChild(edit);
+  actions.appendChild(del);
+
+  li.appendChild(span);
+  li.appendChild(actions);
+
+  list.appendChild(li);
+
+  input.value = "";
+}
+</script>
+
+</body>
+</html>

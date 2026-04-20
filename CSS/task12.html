@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #heading {
+            text-align: center;
+            background-color: rgb(40, 38, 38);
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        #music_card{
+            height: auto;
+            width: 700px;
+            text-align: center;
+            margin: auto;
+        }
+
+        .audio {
+            width: 600px;
+        }
+        .span{
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: grey;
+            border: 2px solid red;
+        }
+
+        .audioSpan {
+            background-color: rgb(52, 51, 51);
+            display: inline-block;
+            padding: 10px;
+        }
+        .outerSpan {
+            display: inline-block;
+            width: 80px;
+            height: 75px;
+            padding: 2px;
+            background-color: grey;
+        }
+
+        .no-spacing {
+            border-spacing: 0;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="heading">Music App</h2>
+
+    <div id="music_card">
+        <div class="container">
+                <table class="no-spacing">
+                    <td>
+                        <span class="outerSpan">
+                            <span class="span"></span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="audioSpan"><audio class="audio" src="/kabir_singh_theme.mp3" controls></audio></span>
+                    </td>
+                </table>
+                <table class="no-spacing">
+                    <td>
+                        <span class="outerSpan">
+                            <span class="span"></span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="audioSpan"><audio class="audio" src="/kabir_singh_theme.mp3" controls></audio></span>
+                    </td>
+                </table>
+                <table class="no-spacing">
+                    <td>
+                        <span class="outerSpan">
+                            <span class="span"></span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="audioSpan"><audio class="audio" src="/kabir_singh_theme.mp3" controls></audio></span>
+                    </td>
+                </table>
+                <table class="no-spacing"   >
+                    <td>
+                        <span class="outerSpan">
+                            <span class="span"></span>
+                        </span>
+                    </td>
+                    <td>
+                        <span class="audioSpan"><audio class="audio" src="/kabir_singh_theme.mp3" controls></audio></span>
+                    </td>
+                </table>
+        </div>
+    </div>
+</body>
+</html>

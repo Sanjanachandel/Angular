@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          
+        body {
+            background-color: bisque;
+        }
+        #recipe {
+            width: 600px;
+            border-radius: 20px;
+            background-color: white;
+            padding: 20px;
+            margin: auto;
+        }
+        #recipe-img-1 {
+            width: 600px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 20px;
+            height: 200px;
+        }
+        #recipe-description {
+            color: grey;
+        }
+        #prep-time {
+            background-color: rgb(253, 220, 226);
+            padding: 20px;
+            border-radius: 20px;
+        }
+        #prep-time p{
+            font-size: 20px;
+            font-weight: 600;
+            color: rgb(228, 106, 126);
+            margin: 0;
+        }
+        li{
+            padding: 2px;
+        }
+        #ingredients{
+            background-color: rgb(244, 231, 214);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+        #ingredients > h2{
+            color: rgb(255, 166, 0);
+            margin: 0;
+        }
+
+        #ingredients > ul {
+            color: rgb(74, 71, 71);
+        }
+        #instructions {
+            padding: 10px;
+        }
+
+        #instructions li::marker{
+            color: orange;
+            font-weight: 600;
+        }
+        #nutrition {
+            padding: 10px;
+        }
+        #nutrition > table {
+            width: 500px;
+            font-size: 18px;
+            margin: auto;
+        }
+        .val {
+            color: orange;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+     
+    <div id="recipe">
+        <img id="recipe-img-1" src="https://static.vecteezy.com/system/resources/previews/039/196/830/non_2x/ai-generated-very-tasty-snacks-food-recipe-and-beautiful-view-of-the-egg-omelet-photo.jpg">
+
+        <h1 id="recipe-title">Simple Omelette Recipe.</h1>
+
+        <p id="recipe-description">An easy gnd perfect for any meal, This classic omelette combines beaten eggs cooked to perfection</p>
+
+        <div id="prep-time">
+            <p>Preparation Time</p>
+            <ul>
+                <li><strong>Total: </strong>Approximately 10 mins</li>
+                <li><strong>Preparation: </strong>5 minutes</li>
+                <li><strong>Cooking: </strong>5 minutes</li>
+            </ul>
+        </div>
+
+        <div id="ingredients">
+            <h2>Ingredients</h2>
+            <ul>
+                <li>2-3 large eggs</li>
+                <li>Salt, to taste</li>
+                <li>Pepper , to taste</li>
+                <li>1 tablespoon of butter or oil</li>
+                <li>Optional fillings: cheese , diced vagetables , cooked meats, herbs</li>
+            </ul>
+        </div>
+
+        <div id="instructions">
+            <h2 style="color: orange; margin: 0;">Instructions</h2>
+            <ol type="1">
+                <li><strong>Beat the eggs: </strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, pariatur.</li>
+                <li><strong>Heat the pan: </strong>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium, esse?</li>
+                <li><strong>Cook the omelette: </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, magnam!</li>
+                <li><strong>Add fillings(Optional): </strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, explicabo.</li>
+                <li><strong>Fold & Server: </strong>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, voluptatem!</li>
+            </ol>
+        </div>
+        <hr>
+
+        <div id="nutrition">
+            <h2 style="color: orange; margin: 0;">Nutrition</h2>
+            <p>The table shows nutritional values per serving of this omelette</p>
+            <table>
+                <tr>
+                    <td>Calories</td>
+                    <td class="val">277Kcal</td>
+                </tr>
+                <tr>
+                    <td>Carbs</td>
+                    <td class="val">0g</td>
+                </tr>
+                <tr>
+                    <td>Proteign</td>
+                    <td class="val">20g</td>
+                </tr>
+                <tr>
+                    <td>Fat</td>
+                    <td class="val">22g</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: repeat(1,400px);
+}
+
+app-sedan{
+  background-color: rgb(241, 160, 84);
+  color:white;
+  border-radius: 10px;
+
+}
+
+app-suvs{
+  background-color: rgb(125, 207, 246);
+  color:white;
+  border-radius: 10px;
+}
+
+
+
+app-luxury{
+  background-color: rgba(83, 222, 176, 0.456);
+  color:white;
+  border-radius: 10px;
+}
