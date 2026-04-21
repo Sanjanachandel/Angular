@@ -10,6 +10,11 @@ import { Child } from './child/child';
 })
 export class Parent {
   dataforchild : string="hello"
+  val:any
   count: number=100;
   arr=[1,2,3,4,5];
+  childEvent(a:any)
+  {
+    this.val=a;
+  }
 }

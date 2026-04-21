@@ -1,4 +1,76 @@
 <p>child works!</p>
-<h1>{{data}}</h1>
+<!-- <h1>{{data}}</h1>
 <h1>{{val}}</h1>
 <h1>{{arr}}</h1>
+<button (click)="result()">Send Data to Parent</button> -->
+<!-- <ng-content ></ng-content> -->
+
+
+<h2>Directives</h2>
+<h1 [ngClass]="{active,change}">Hello</h1>
+<button (click)="toggle()">Add/remove css</button>
+<p [ngStyle]="{color:col,backgroundColor:bg}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic dolore mollitia neque repudiandae, doloribus sequi quae. Quo suscipit doloribus atque explicabo, ipsa, magnam laborum perspiciatis tenetur maiores ducimus expedita numquam!</p>
+
+<p [ngStyle]="fstyle?css:css1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel nemo hic quo omnis voluptatum, aliquid doloremque aspernatur velit explicabo adipisci eveniet obcaecati amet minus natus mollitia! Sed vero accusamus fuga.</p>
+<button (click)="handelChange()">change color</button>
+<!-- Structural Directive -->
+<!-- 1.. ngIf -->
+<div *ngIf="login ; else failed">
+<h1>
+  hello
+</h1>
+</div>
+<ng-template #failed>
+  <h1>logout now</h1>
+</ng-template>
+<button (click)="handleLogin(true)">login</button>
+<button (click)="handleLogin(false)">logout</button>
+<!--2.. ngFor -->
+<h1>{{arr}}</h1>
+<div  *ngFor="let data of arr">
+  <h1>{{data}}</h1>
+</div>
+
+<!-- 3.. ngSwitch -->
+ <div [ngSwitch]="user">
+<p *ngSwitchCase="'admin'">this is admin</p>
+<p *ngSwitchCase="'user'">this is user</p>
+<p *ngSwitchCase="'work'">this is work</p>
+<p *ngSwitchDefault>unauthorized</p>
+ </div>
+
+ <!-- control flow statement -->
+  @if(user==='admin')
+  {
+    <h1>this is admin dashboard</h1>
+  }
+  @else if (user==='user'){
+    <h1>this is user dashboard</h1>
+  }
+  @else if (user==='login')
+  {
+    <h1>this is login dashboard</h1>
+  }
+  @else {
+    <h1>this is default</h1>
+  }
+
+
+  @for (item of arr; track $index) {
+    <h3>{{$index}} - {{item}}</h3>
+  }
+
+  @switch(user){
+    @case ('admin') {
+      <h3>this is  admin</h3>
+    }
+    @case('guest'){
+      <h3>this is guest</h3>
+    }
+    @case ('user') {
+      <h3>this is user</h3>
+    }
+    @default {
+      <h3>this is useless</h3>
+    }
+  }
