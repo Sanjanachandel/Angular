@@ -1,0 +1,10 @@
+div{
+  color: brown;
+  border: 10px solid black;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  display: flex;
+  border-radius: 10px;
+
+}

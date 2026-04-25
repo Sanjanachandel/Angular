@@ -1,0 +1,25 @@
+<p>template-driven-forms works!</p>
+<form #loginForm="ngForm" (ngSubmit)="handleSubmit(loginForm)">
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username" [(ngModel)]="userName" #user="ngModel" required>
+    @if(user.invalid && user.touched)
+    {
+      <p style="color: red;">user can't empty</p>
+    }
+    <br><br>
+    <label for="password">Password: </label>
+    <input type="text" name="password" id="password" [(ngModel)]= "passWord" #pass ="ngModel" required minlength="5">
+    @if(pass.invalid && pass.touched)
+    {
+      <p style="color: red;">you can not login wihtout password</p>
+    }
+    <br><br>
+    <button type="submit" [disabled] = "loginForm.invalid">Login</button>
+
+</form>
+<h3>Pristine: {{loginForm.pristine}}</h3>
+<h3>Dirty: {{loginForm.dirty}}</h3>
+<h3>Untouched: {{loginForm.untouched}}</h3>
+<h3>Touched: {{loginForm.touched}}</h3>
+<h3>Valid: {{loginForm.valid}}</h3>
+<h3>Invalid: {{loginForm.invalid}}</h3>

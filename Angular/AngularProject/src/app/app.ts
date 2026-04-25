@@ -1,8 +1,14 @@
+import { form } from '@angular/forms/signals';
 import { Binding } from './binding/binding';
-import { Component  } from '@angular/core';
+import { Component ,inject } from '@angular/core';
 import { home } from './Home/home';
 import { Nav } from './nav/nav';
 import { Parent } from "./parent/parent";
+import { Forms } from "./forms/forms";
+import { DataService } from './data-service/data-service';
+import { Dashboard } from './dashboard/dashboard';
+import { RouterOutlet, RouterLinkWithHref, Router } from '@angular/router';
+
 
 // import { RouterOutlet } from '@angular/router';
 
@@ -16,8 +22,23 @@ import { Parent } from "./parent/parent";
 
   templateUrl: './app.html',
   styleUrl: './app.css',
-  imports: [home, Nav, Binding, Parent]
+  imports: [RouterOutlet, RouterLinkWithHref]
 })
 export class App {
   // protected readonly title = signal('AngularProject');
+    route=inject(Router);
+    change:boolean=true
+    login(){
+      if(this.change){
+        this.route.navigate(['/home']);
+        console.log(this.route.url);
+        this.change=false;
+      }
+      else{
+        this.route.navigate(['/form'])
+        console.log(this.route.url);
+        this.change=true;
+      }
+    }
+
 }

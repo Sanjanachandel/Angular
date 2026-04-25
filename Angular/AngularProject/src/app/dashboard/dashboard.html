@@ -1,0 +1,16 @@
+<p>dashboard works!</p>
+<button (click)="createResourceInApi()"> add data</button><br>
+<button (click)="update()">update data</button><br><br>
+<button (click)="delete()">delete data</button>
+@if(productList==undefined)
+{
+  <p class="load">content is loading..</p>
+}
+@else{
+@for (item of productList; track $index) {
+  <h1>{{item.id}}</h1>
+  <p>{{item.description}}</p>
+  <p>{{item.price}}</p>
+  <img [src]="item.images" height="300px" width="300px">
+  }
+}

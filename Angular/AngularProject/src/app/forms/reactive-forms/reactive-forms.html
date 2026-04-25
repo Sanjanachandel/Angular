@@ -1,0 +1,79 @@
+<!-- <p>reactive-forms works!</p>
+<input type="text"name="" id="" [formControl]="userName">
+<input type="password"name="" id="" [formControl]="passWord">
+<button type="submit" (click)="onSubmit()">submit</button> -->
+
+<form [formGroup]="logIn"  (ngSubmit)="getValue()">
+  <label for="">username</label>
+  <br>
+  <input type="text"name="username" formControlName="userName" [ngClass]="{
+    valid:logIn.get('userName')?.valid,
+    invalid:logIn.get('userName')?.invalid,
+
+  }"/><br>
+  <label for="">password</label>
+  <input type="text" name="password" formControlName="passWord" [ngClass]="{
+    valid:logIn.get('passWord')?.valid,
+    invalid:logIn.get('passWord')?.invalid,
+
+  }"><br>
+  <button >submit</button>
+  @if(logIn.get('userName')?.touched)
+  {
+    <p>to submit the form first fill all filed</p>
+  }
+</form>
+<h3>pristine:{{logIn.pristine}}</h3>
+
+<h1> Registration from</h1>
+<fieldset>
+  <form  [formGroup]="regForm" (ngSubmit)="getValue1()">
+    <label for="">FName</label>
+    <input type="text" name ="fName" formControlName="fName"
+    [ngClass]="{
+        valid:regForm.get('fName')?.valid,
+        invalid:regForm.get('fName')?.invalid }">
+    <label for="">LName</label>
+    <input type="text" name ="lName" formControlName="lName" (input)="lNameField()"
+        [ngClass]="{
+        valid:regForm.get('lName')?.valid,
+        invalid:regForm.get('lName')?.invalid }"><br><br>
+    <label for="">PNo</label>
+    <input type="tel" name="phno" formControlName="phno"><br>
+    <button (click)="enableField()">Enable</button>
+    <button (click)="disableField()">Disable</button>
+    <label for="">Email</label>
+    <input type="text" name="email" id="" formControlName="email"><br><br>
+    <label for="gender">Gender</label><br>
+    Male <input type="radio" name="gender" value="male" formControlName="gender"><br>
+    Female <input type="radio" name="gender" value="female" formControlName="gender"><br>
+    Other <input type="radio" name="gender" value="other" formControlName="gender">
+    <label for="">Select Subject</label><br>
+    <select name="sel" id="" formControlName="sel">
+      <option value="Html" >Html</option>
+      <option value="Css">CSS</option>
+      <option value="Java">Java</option>
+      <option value="angular">Angular</option>
+    </select>
+    <br>
+    <label for="">Address</label>
+    <hr>
+    <label for="">State</label><br>
+    <input type="text" formControlName="state">
+    <label for="">City</label>
+    <input type="text" name="city" id="" formControlName="city">
+    <br>
+     <label for="">Pincode</label><br>
+    <input type="text" formControlName="code">
+    <label for="">Date</label>
+    <input type="date" name="date1" id="" formControlName="date1">
+    <br>
+    <button >Submit</button>
+    <button type="reset">Reset</button>
+
+
+
+
+
+
+</form></fieldset>

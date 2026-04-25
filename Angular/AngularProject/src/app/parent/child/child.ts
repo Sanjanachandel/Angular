@@ -60,4 +60,19 @@ handleLogin(a:any)
 
   arr=["Java","C","Cpp","Angular","Prateek","Sanjana"];
   user:string="admin";
+
+
+  date=new Date()
+  username:string="Anishuuu Betuuu"
+  price:number=100;
+  userData={
+    id:1,
+    fistName:"Sanjana",
+    lastName:"Chandel",
+    age:22,
+    address:{
+      state:"Hp",
+      city:"Naina devi"
+    }
+  }
 }
