@@ -1,0 +1,116 @@
+<div class="container">
+    <header class="header">
+        <h1>Product Management</h1>
+        <p>Dynamic CRUD Operations with User Input</p>
+    </header>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="card glass">
+            <h2>{{ isEditing ? 'Edit Product' : 'Add New Product' }}</h2>
+            
+            @if (errorMessage) {
+                <div class="alert error-alert">
+                    <span>⚠️ {{ errorMessage }}</span>
+                    <button (click)="errorMessage = null" class="close-btn">&times;</button>
+                </div>
+            }
+
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input id="title" type="text" formControlName="title" placeholder="Enter product title">
+                        @if (productForm.get('title')?.touched && productForm.get('title')?.invalid) {
+                            <small class="error">
+                                Title is required (min 3 chars).
+                            </small>
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input id="price" type="number" formControlName="price" placeholder="Enter price">
+                        @if (productForm.get('price')?.touched && productForm.get('price')?.invalid) {
+                            <small class="error">
+                                Price must be greater than 0.
+                            </small>
+                        }
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL</label>
+                        <input id="imageUrl" type="text" formControlName="imageUrl" placeholder="Enter image URL">
+                        @if (productForm.get('imageUrl')?.touched && productForm.get('imageUrl')?.invalid) {
+                            <small class="error">
+                                Image URL is required.
+                            </small>
+                        }
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="description">Description</label>
+                        <textarea id="description" formControlName="description" rows="3" placeholder="Enter product description"></textarea>
+                        @if (productForm.get('description')?.touched && productForm.get('description')?.invalid) {
+                            <small class="error">
+                                Description is required.
+                            </small>
+                        }
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">
+                        {{ isEditing ? 'Update Product' : 'Create Product' }}
+                    </button>
+                    @if (isEditing) {
+                        <button type="button" class="btn btn-secondary" (click)="resetForm()">
+                            Cancel
+                        </button>
+                    }
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Product List Section -->
+    <section class="list-section">
+        <div class="list-header">
+            <h2>Products Inventory</h2>
+        </div>
+
+        @if (isLoading && productList.length === 0) {
+            <div class="loader-container">
+                <div class="loader"></div>
+                <p>Fetching latest products...</p>
+            </div>
+        }
+
+        @if (productList.length > 0) {
+            <div class="product-grid">
+                @for (item of productList; track item.id) {
+                    <div class="product-card glass">
+                        <div class="product-image">
+                            <img [src]="item.images[0]" alt="{{item.title}}">
+                            <span class="price-tag">${{item.price}}</span>
+                        </div>
+                        <div class="product-info">
+                            <h3>{{item.title}}</h3>
+                            <p class="description">{{item.description}}</p>
+                            <div class="card-actions">
+                                <button class="btn btn-edit" (click)="editProduct(item)">Edit</button>
+                                <button class="btn btn-delete" (click)="deleteProduct(item.id)">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+
+        @if (productList.length > 0 && !isLoading) {
+            <div class="load-more-container">
+                <button class="btn btn-primary" (click)="loadMore()">Load More Products</button>
+            </div>
+        }
+    </section>
+</div>

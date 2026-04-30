@@ -8,6 +8,7 @@ import { Wild } from './wild/wild';
 import { Binding } from './binding/binding';
 import { ReactiveForms } from './forms/reactive-forms/reactive-forms';
 import { form } from '@angular/forms/signals';
+import { ProductCrud } from './product-crud/product-crud';
 
 
 export const routes: Routes = [{
@@ -44,8 +45,14 @@ export const routes: Routes = [{
 ,{
   path:'form',
   component:Forms
-},{
+},
+{
+        path: 'product-crud',
+        component: ProductCrud
+    },
+    {
   path:'**',
   component:Wild
 }
+
 ];

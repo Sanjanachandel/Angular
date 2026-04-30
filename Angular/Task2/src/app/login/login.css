@@ -1,0 +1,64 @@
+.container {
+  width: 350px;
+  margin: 80px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkbox {
+  margin-top: 10px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #9bbcf7;
+  cursor: not-allowed;
+}
+
+
+.checkbox {
+  margin-top: 12px;
+}
+
+.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: auto;
+  margin: 0;
+}

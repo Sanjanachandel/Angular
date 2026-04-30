@@ -1,0 +1,172 @@
+:host {
+    display: block;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+/* Simple Card Style */
+.card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Simple Form */
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width {
+    flex: 1 1 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.form-actions {
+    margin-top: 15px;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #f39c12;
+    color: white;
+}
+
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Alert */
+.alert {
+    padding: 10px;
+    background-color: #fdeaea;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.product-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+
+.price-tag {
+    font-weight: bold;
+    color: #27ae60;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 10px 0;
+    height: 40px;
+    overflow: hidden;
+}
+
+.card-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.card-actions .btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.load-more-container {
+    text-align: center;
+    margin-top: 20px;
+}

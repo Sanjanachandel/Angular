@@ -5,20 +5,23 @@ import { inject, Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class ProductData {
-  http=inject(HttpClient);
-  productApi=" https://api.escuelajs.co/api/v1/products"
-  getData()
-  {
-    return this.http.get(this.productApi);
+  http = inject(HttpClient);
+
+  productsApi = "https://api.escuelajs.co/api/v1/products";
+
+  getData(offset: number = 0, limit: number = 12){
+    return this.http.get(`${this.productsApi}?offset=${offset}&limit=${limit}`);
   }
+
   addData(data:any){
-    return this.http.post(this.productApi,data)
+    return this.http.post(this.productsApi,data);
   }
-  updateProduct(data:any,id:number)
-  {
-    return this.http.put(`${this.productApi}/${id}`,data)
+
+  updateData(data:any, id:number){
+    return this.http.put(`${this.productsApi}/${id}`,data);
   }
-  delete(id:number){
-    return this.http.delete(`${this.productApi}/${id}`)
+
+  deleteData(id:number){
+    return this.http.delete(`${this.productsApi}/${id}`);
   }
 }
